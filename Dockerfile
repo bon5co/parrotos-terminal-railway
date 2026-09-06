@@ -29,6 +29,7 @@ ENV USERNAME=admin
 RUN printf '%s\n' \
         "cd /root" \
     >> /root/.bashrc && \
+    mkdir -p /opt && \
     cp -a /root /opt/root-skel
 
 COPY railway-entrypoint.sh /usr/local/bin/railway-entrypoint.sh
