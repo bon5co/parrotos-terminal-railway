@@ -15,7 +15,8 @@ RUN apt-get update && \
 
 # ttyd pinned. The incumbent downloads .../releases/latest/... at build time, so
 # two deploys of the same template can ship different terminals.
-RUN wget -qO /usr/local/bin/ttyd \
+RUN mkdir -p /usr/local/bin && \
+    wget -qO /usr/local/bin/ttyd \
         https://github.com/tsl0922/ttyd/releases/download/1.7.7/ttyd.x86_64 && \
     chmod +x /usr/local/bin/ttyd
 
